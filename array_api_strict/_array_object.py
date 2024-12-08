@@ -249,6 +249,8 @@ class Array:
         """
         from ._data_type_functions import iinfo
 
+        _np_dtype = None
+
         # Note: Only Python scalar types that match the array dtype are
         # allowed.
         if isinstance(scalar, bool):
@@ -274,21 +276,28 @@ class Array:
                     "Python float scalars can only be promoted with floating-point arrays."
                 )
         elif isinstance(scalar, complex):
-            if self.dtype not in _complex_floating_dtypes:
+            if self.dtype not in _floating_dtypes:
                 raise TypeError(
-                    "Python complex scalars can only be promoted with complex floating-point arrays."
+                    "Python complex scalars can only be promoted with floating-point arrays."
                 )
+            _np_dtype = {'float32': np.complex64, 'float64': np.complex128,
+                         'complex64': np.complex64, 'complex128': np.complex128,
+                        }[self.dtype._np_dtype.name]
         else:
             raise TypeError("'scalar' must be a Python scalar")
 
         # Note: scalars are unconditionally cast to the same dtype as the
         # array.
+        # An exception is complex scalars: they are cast to the dtype with
+        # the same *precision* as the array. IOW: 1j * f32_array -> c64_array etc
 
         # Note: the spec only specifies integer-dtype/int promotion
         # behavior for integers within the bounds of the integer dtype.
         # Outside of those bounds we use the default NumPy behavior (either
         # cast or raise OverflowError).
-        return Array._new(np.array(scalar, dtype=self.dtype._np_dtype), device=self.device)
+        if _np_dtype is None:
+            _np_dtype = self.dtype._np_dtype
+        return Array._new(np.array(scalar, dtype=_np_dtype), device=self.device)
 
     @staticmethod
     def _normalize_two_args(x1, x2) -> Tuple[Array, Array]:
