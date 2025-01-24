@@ -158,13 +158,18 @@ class Array:
     # Instead of `__array__` we now implement the buffer protocol.
     # Note that it makes array-apis-strict requiring python>=3.12
     def __buffer__(self, flags):
-        print('__buffer__')
         if self._device != CPU_DEVICE:
             raise RuntimeError(f"Can not convert array on the '{self._device}' device to a Numpy array.")
         return memoryview(self._array)
     def __release_buffer(self, buffer):
-        print('__release__')
         # XXX anything to do here?
+        pass
+
+    def __array__(self, *args, **kwds):
+        # a stub for python < 3.12; otherwise numpy silently produces object arrays
+        raise TypeError(
+            "Interoperation with NumPy requires python >= 3.12. Please upgrade."
+        )
 
     # These are various helper functions to make the array behavior match the
     # spec in places where it either deviates from or is more strict than

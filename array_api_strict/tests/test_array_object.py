@@ -369,6 +369,20 @@ def test_array_conversion():
         with pytest.raises((RuntimeError, TypeError)):
             asarray([a])
 
+    # __buffer__ should work for now for conversion to numpy
+    a = ones((2, 3))
+    na = np.array(a)
+    assert na.shape == (2, 3)
+    assert na.dtype == np.float64
+
+@pytest.mark.skipif(not sys.version_info.major*100 + sys.version_info.minor < 312,
+                    reason="conversion to numpy errors out unless python >= 3.12"
+)
+def test_array_conversion_2():
+    a = ones((2, 3))
+    with pytest.raises(TypeError):
+        np.array(a)
+
 
 def test_allow_newaxis():
     a = ones(5)
