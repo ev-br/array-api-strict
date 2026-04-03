@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Reference" href="api.html" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="API Reference" href="api.html">
 
-    <link rel="shortcut icon" href="_static/favicon.png"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="_static/favicon.png"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>array-api-strict documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=acfd86a5" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=dc4c535e" />
     
     
@@ -18,8 +18,8 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
   
   }
   @media not print {
@@ -146,14 +146,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -163,8 +159,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -172,8 +167,7 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -181,8 +175,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -190,7 +183,6 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
-  
   
   <span class="sidebar-brand-text">array-api-strict  documentation</span>
   
@@ -230,8 +222,7 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -239,8 +230,7 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -258,12 +248,10 @@ libraries. Consuming library code should use the
 <a class="reference external" href="https://data-apis.org/array-api-compat/">array-api-compat</a> package to
 support the array API. Rather, it is intended to be used in the test suites of
 consuming libraries to test their array API usage.</p>
-<p>array-api-strict currently supports the
-<a class="reference external" href="https://data-apis.org/array-api/latest/changelog.html#v2022-12">2023.12</a>
-version of the standard.
-<a class="reference external" href="https://data-apis.org/array-api/latest/changelog.html#v2023-12">2022.12</a>
-support is also implemented, <a class="reference internal" href="api.html#array-api-strict-flags"><span class="std std-ref">and can be enabled with a
-flag</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">array-api-strict</span></code> currently supports the
+<a class="reference external" href="https://data-apis.org/array-api/2025.12/changelog.html">2025.12</a>
+version of the standard. Support for previous versions is also implemented,
+<a class="reference internal" href="api.html#array-api-strict-flags"><span class="std std-ref">and can be enabled with a flag</span></a>.</p>
 <section id="install">
 <h2>Install<a class="headerlink" href="#install" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">array-api-strict</span></code> is available on both
@@ -275,7 +263,7 @@ flag</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">array</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">strict</span>
 </pre></div>
 </div>
-<p>array-api-strict supports NumPy 1.26 and NumPy 2.0.</p>
+<p>array-api-strict supports NumPy 1.26 and NumPy 2.0-2.4.</p>
 </section>
 <section id="rationale">
 <h2>Rationale<a class="headerlink" href="#rationale" title="Link to this heading">¶</a></h2>
@@ -382,10 +370,13 @@ to NumPy, but nonetheless, performance is not a primary concern for this
 library, since it is only intended to be used for testing purposes.</p></li>
 <li><p>Since NumPy is a CPU-only library, the <a class="reference external" href="https://data-apis.org/array-api/latest/design_topics/device_support.html">device
 support</a>
-in array-api-strict is superficial only. <code class="docutils literal notranslate"><span class="pre">x.device</span></code> is always a (private)
-<code class="docutils literal notranslate"><span class="pre">CPU_DEVICE</span></code> object, and <code class="docutils literal notranslate"><span class="pre">device</span></code> keywords to creation functions only
-accept either this object or <code class="docutils literal notranslate"><span class="pre">None</span></code>. A future version of array-api-strict
-<a class="reference external" href="https://github.com/data-apis/array-api-strict/issues/5">may add support for a CuPy
+in array-api-strict is superficial only.
+array-api-strict supports three ‘devices’; the default <code class="docutils literal notranslate"><span class="pre">CPU_DEVICE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Device(&quot;device1&quot;)</span></code> and <code class="docutils literal notranslate"><span class="pre">Device(&quot;device2&quot;)</span></code>. This allows testing of arrays on
+different devices, without the need for special hardware.
+<code class="docutils literal notranslate"><span class="pre">x.device</span></code> is always a <code class="docutils literal notranslate"><span class="pre">Device</span></code> object, and <code class="docutils literal notranslate"><span class="pre">device</span></code> keywords to creation
+functions only accept the above three device objects or <code class="docutils literal notranslate"><span class="pre">None</span></code>. A future version of
+array-api-strict <a class="reference external" href="https://github.com/data-apis/array-api-strict/issues/5">may add support for a CuPy
 backend</a> so that
 more significant device support can be tested.</p></li>
 <li><p>Although only array types are expected in array-api-strict functions,
@@ -482,9 +473,9 @@ was generated automatically from the numpy git history, using the following
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
